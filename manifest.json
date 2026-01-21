@@ -1,0 +1,9 @@
+{
+    "name" : "PWA",
+    "short_name" : "PWA",
+    "theme_color": "#0d4c73",
+    "background_color" : "#0d4c73",
+    "display" : "fullscreen",
+    "scope" :"/",
+    "start_url" : "/index.html"
+}
