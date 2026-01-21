@@ -2,14 +2,14 @@
     "name": "eBox",
     "icons": [
         {
-            "src": "/icons/box-1-512dp.png",
+            "src": "icons/box-2-512dp.png",
             "sizes": "512x512",
             "type": "image/png"
         }
     ],
     "theme_color": '#339',
     "backgroundcolor": '#339',
-    "start_url": "/index.html",
+    "start_url": "index.html",
     "display": "fullscreen",
     "orientation": "portrait"
 }
