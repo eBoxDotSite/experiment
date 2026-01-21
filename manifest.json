@@ -3,7 +3,7 @@
     "icons": [
         {
             "src": "/icons/box-1-512dp.png",
-            "sizes": "256x256 512x512 1024x1024",
+            "sizes": "512x512",
             "type": "image/png"
         }
     ],
