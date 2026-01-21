@@ -1,12 +1,13 @@
 {
     "name": "Meine App",
     "short_name": "App",
-    "icons": 
-        ]{
+    "icons": [
+        {
             "src": "box-1-512dp.png",
             "sizes": "512x512",
             "type": "image/png"
-        }|,
+        }
+    ],
     "theme_color": '#933',
     "backgroundcolor": '#339',
     "start_url": "/index.html",
