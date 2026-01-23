@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Settings -->
+<head>
+	<title>PWA - Quiz Game</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<!-- Content -->
+<body>
+
+    <!-- Navigation Menu-->
+	<nav id="menu-list">
+		<img id="menu-button" onclick="menuOnOff()" src="icons/menu-64.png">
+		<a id="menu-link1" href="index.html"><img id="menu-img1" src="icons/mail-48.png">Home</a>
+		<a id="menu-link2" href="quiz-game.html"><img id="menu-img2" src="icons/quiz-524dp.png">Quiz Game</a>
+	</nav>
+
+    <!-- Quiz Game -->
+    <div>
+        <p style="font-size: 2em;font-weight: bold;">Zufalsszahl erraten</p>
+    
+        <p>Die KI hat eine zufällige Zahl zwischen 1 und 100 ausgesucht.</p>
+        <p>Deine Aufgabe ist, diese Zahl zu erraten.</p>
+        <p>Du hast 7 Versuche, viel Glück!</p>
+        <br>
+        <hr><br>
+        <div style="display: flex;align-items: center;">
+            <label for="zInput">Bitte eine Zahl eingeben:</label>
+            <input id="inputZahl" 
+                typ="number" min="1" max="100" required 
+                style="width: 4em;height: 2em;background-color: #55aaff;"
+            ><!-- input end -->
+            <button onclick="zahlPrüfen()" style="height: 2em;background-color: #f88;">Eingabe prüfen</button>
+        </div>
+        <br><hr>
+        <p id="outputText"></p>
+        <hr>
+
+    </div>
+
+    <!-- Spiel Logik -->
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        const inputZahl = document.getElementById('inputZahl');
+        const outputText = document.getElementById('outputText');
+        let counter = 1;
+
+        function zahlPrüfen() {
+            if(counter <= 7){
+                if(inputZahl.value != randomNumber){
+                    if(inputZahl.value < randomNumber){
+                        outputText.insertAdjacentHTML("beforebegin","Versuch Nr. " + counter 
+                                                + " | Eingabe: " + inputZahl.value 
+                                                + " | Ergebnis der Überprüfung: Die Zahl ist zu klein!<br>");
+                    }
+                    if(inputZahl.value > randomNumber){
+                        outputText.insertAdjacentHTML("beforebegin","Versuch Nr. " + counter 
+                                                + " | Eingabe: " + inputZahl.value 
+                                                + " | Ergebnis der Überprüfung: Die Zahl ist zu groß!<br>");
+                    }
+                    counter++;
+                    if(counter == 8){
+                        outputText.textContent = "Du hast leider verloren!";
+                        outputText.style.color = ""}
+                }else{
+                    outputText.textContent = "Gratulation, du hast gewonnen!";
+                }
+            }
+            inputZahl.value = "";
+        }
+
+    </script>
+	
+</body>
+</html>
