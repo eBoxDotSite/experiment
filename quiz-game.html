@@ -39,7 +39,6 @@
         </div>
         <br><hr>
         <p id="outputText"></p>
-        <hr>
 
     </div>
 
@@ -56,19 +55,20 @@
                     if(inputZahl.value < randomNumber){
                         outputText.insertAdjacentHTML("beforebegin","Versuch Nr. " + counter 
                                                 + " | Eingabe: " + inputZahl.value 
-                                                + " | Ergebnis der Überprüfung: Die Zahl ist zu klein!<br>");
+                                                + " | Ergebnis der Überprüfung: Die Zahl ist zu klein!<hr>");
                     }
                     if(inputZahl.value > randomNumber){
                         outputText.insertAdjacentHTML("beforebegin","Versuch Nr. " + counter 
                                                 + " | Eingabe: " + inputZahl.value 
-                                                + " | Ergebnis der Überprüfung: Die Zahl ist zu groß!<br>");
+                                                + " | Ergebnis der Überprüfung: Die Zahl ist zu groß!<hr>");
                     }
                     counter++;
                     if(counter == 8){
                         outputText.textContent = "Du hast leider verloren!";
-                        outputText.style.color = ""}
+                        outputText.style.backgroundColor = "#ff5555"}
                 }else{
-                    outputText.textContent = "Gratulation, du hast gewonnen!";
+                    outputText.textContent = "Gratulation, du hast gewonnen!"
+                    outputText.style.backgroundColor = "#55ff55";
                 }
             }
             inputZahl.value = "";
